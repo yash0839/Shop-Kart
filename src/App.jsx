@@ -1,0 +1,30 @@
+import React from 'react';
+import Layout from './Components/Layout';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { CartProvider } from './Components/CartContext';
+
+import Home from './Pages/Home';
+import Product from './Pages/Products';
+import Cart from './Pages/Cart';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+
+const App = () => {
+  return (
+    <CartProvider>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="product" element={<Product />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Route>
+    </Routes>
+    </BrowserRouter>
+    </CartProvider>
+  );
+};
+
+export default App;
