@@ -18,9 +18,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `transition hover:text-red-400 ${
-                isActive ? "text-red-500 font-bold" : "text-white"
-              }`
+              `transition hover: text-red-400 ${isActive ? "text-red-600 font-bold" : "text-white"}`
             }
           >
             Home
@@ -29,9 +27,7 @@ const Navbar = () => {
           <NavLink
             to="/product"
             className={({ isActive }) =>
-              `transition hover:text-red-400 ${
-                isActive ? "text-red-500 font-bold" : "text-white"
-              }`
+              `transition hover: text-red-400 ${isActive ? "text-red-600 font-bold" : "text-white"}`
             }
           >
             Product
@@ -40,20 +36,27 @@ const Navbar = () => {
           <NavLink
             to="/cart"
             className={({ isActive }) =>
-              `transition hover:text-red-400 ${
-                isActive ? "text-red-500 font-bold" : "text-white"
-              }`
+              `transition hover: text-red-400 ${isActive ? "text-red-600 font-bold" : "text-white"}`
             }
           >
             Cart
           </NavLink>
 
+
+          <NavLink
+            to="/contect"
+            className={({ isActive }) =>
+              `transition hover: text-red-400 ${isActive ? "text-red-600 font-bold" : "text-white"}`
+            }
+          >
+            Contect
+          </NavLink>
+
+
           <NavLink
             to="/login"
             className={({ isActive }) =>
-              `transition hover:text-red-400 ${
-                isActive ? "text-red-500 font-bold" : "text-white"
-              }`
+              `transition hover: text-red-400 ${isActive ? "text-red-600 font-bold" : "text-white"}`
             }
           >
             Login
@@ -62,9 +65,7 @@ const Navbar = () => {
           <NavLink
             to="/register"
             className={({ isActive }) =>
-              `bg-red-600 px-4 py-2 rounded-lg hover:bg-red-700 transition ${
-                isActive ? "ring-2 ring-red-300" : ""
-              }`
+              `transition hover: text-red-400 ${isActive ? "text-red-600 font-bold" : "text-white"}`
             }
           >
             Register

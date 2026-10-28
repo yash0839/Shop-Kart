@@ -8,6 +8,7 @@ import Product from './Pages/Products';
 import Cart from './Pages/Cart';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import Contect from './Pages/Contect';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="product" element={<Product />} />
         <Route path="cart" element={<Cart />} />
+        <Route path='contect' element={<Contect />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Route>
