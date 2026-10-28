@@ -1,0 +1,17 @@
+export default [
+    { id: 1, name: "Samsung", image: "https://images.unsplash.com/photo-1772182092777-6b1bf0a362fe?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" },
+    { id: 2, name: "boAt", image: "https://plus.unsplash.com/premium_photo-1791369739587-2a77c3e070c8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"  },
+    { id: 3, name: "Puma",image: "https://images.unsplash.com/photo-1545289414-1c3cb1c06238?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"  },
+    { id: 4, name: "LG", image: "https://images.unsplash.com/photo-1634571799060-0efdc50a422d?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"  },
+    { id: 5, name: "Philips", image: "https://plus.unsplash.com/premium_photo-1679864782376-bdbbb87d9027?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" },
+    { id: 6, name: "Nivea", image: "https://images.unsplash.com/photo-1632221522690-6a0c04bf6f85?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" },
+    { id: 7, name: "Himalaya", image: "https://plus.unsplash.com/premium_photo-1791369739587-2a77c3e070c8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" },
+    { id: 8, name: "Apple", image: "https://images.unsplash.com/vector-1787490703300-86f8477754e9?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" },
+    { id: 9, name: "Fastrack", image: "https://plus.unsplash.com/premium_photo-1791369739587-2a77c3e070c8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" },
+    { id: 10, name: "Levi's", image: "https://imgs.search.brave.com/7tGRvVKMqyeeexbn4fLeN9qn3EUquHoEwML31qft6tY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDU4/NjU4NzI5L3Bob3Rv/L2xldmlzLTUwMS1i/dXR0b24tZmx5LWxh/YmVsLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz15OGRqZS0t/UUd6ZjRQdHQ1OUha/VXltQ253d1V0eFhI/c1ZCMmlyakhqQ0xj/PQ" },
+    { id: 11, name: "Nike", image: "https://imgs.search.brave.com/0TTEqxr0YLQGJA3nzZ3DvRMqtvAeYN964_xSkR8w6cY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzM2LzY4LzU2/LzM2MF9GXzUzNjY4/NTYyNV9JR0xTTjRG/bTVFR2N4UTRrSDha/MXlmTTlpRmRDaWc1/by5qcGc" },
+    { id: 12, name: "Adidas", image: "https://imgs.search.brave.com/yYcd4O1_QLQOidpOqBuT1a5t0kJVjScIAF72mStSpu4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdDMu/ZGVwb3NpdHBob3Rv/cy5jb20vMTAzMTM0/MjAvMTYyNjUvaS80/NTAvZGVwb3NpdHBo/b3Rvc18xNjI2NTUz/MzAtc3RvY2stcGhv/dG8tbG9nby1vZi1i/cmFuZC1hZGlkYXMu/anBn" },
+    { id: 13, name: "Canon", image: "https://imgs.search.brave.com/NAqSWE-4KelCsbWyzEblovPrMCFAIN5ysFZ7vYXFP18/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/bWVkaWEuYW1wbGll/bmNlLm5ldC9pL2Nh/bm9uL2Vvcy1yNi1t/YXJrLWlpaV9saWZl/c3R5bGVfY29yaW5u/ZS1jdW1taW5nXzI2/MTlfYWNmNmIwYjUx/MTdlNGI2ZWI5MDUy/M2NjMzJmOWQ1Mjc_/JGJsb2NrLW1lZGlh/LTE2Ynk5LWR0LWpw/ZyQ" },
+    { id: 14, name: "Intel", image: "https://imgs.search.brave.com/ANvwjEDKTPVjaNx402TWXxbiLaqMWK9Bl38g0RgormU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbnRl/bGNvcnAuc2NlbmU3/LmNvbS9pcy9pbWFn/ZS9pbnRlbGNvcnAv/aG9tZXBhZ2UtYmFk/Z2UteGVvbi11cGRh/dGVkLWdsb3ctMTA4/MHgxMDgwP3RzPTE3/NzM2OTgzNzA5NTAm/ZHByPW9mZg" },
+    { id: 15, name: "Ray-Ban", image: "https://imgs.search.brave.com/DBVwiWfIfAchekszEkuKX2rE2bUAP_Wed675w3TwCPY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTY5/Mzc0MTg0MS9waG90/by9hbi1hdWRpZW5j/ZS1tZW1iZXItd2F0/Y2hlcy10aGUtbWV0/YS1jb25uZWN0LWRl/dmVsb3Blci1jb25m/ZXJlbmNlLWtleW5v/dGUtd2hpbGUtd2Vh/cmluZy1yYXkuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPXpx/QURDQTZsd0hhSGNx/M3pnbmtmWGdoMGNL/RXB1a3lfbW1EOTBN/NTQwUjg9" },
+];

@@ -25,6 +25,13 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
+            to='/about'
+            className={({isActive}) =>`transition hover:text-red-400 ${isActive ? "text-red-600": "text-white"}`}
+          >
+            About
+          </NavLink>
+
+          <NavLink
             to="/product"
             className={({ isActive }) =>
               `transition hover: text-red-400 ${isActive ? "text-red-600 font-bold" : "text-white"}`

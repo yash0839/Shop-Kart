@@ -9,6 +9,7 @@ import Cart from './Pages/Cart';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Contect from './Pages/Contect';
+import About from './Pages/About';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path='about' element={<About />}/>
         <Route path="product" element={<Product />} />
         <Route path="cart" element={<Cart />} />
         <Route path='contect' element={<Contect />} />
