@@ -41,7 +41,8 @@ const Products = () => {
   })
 
   return (
-    <div>
+   
+<div>
       <h3>Products</h3>
       <label>Sort by: </label>
       <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
