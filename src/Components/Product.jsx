@@ -2,7 +2,7 @@ import React from 'react';
 import { useCart } from '../Components/CartContext';
 import { Link } from 'react-router-dom';
 
-const Product = ({ id, title, image, price, category }) => {
+const Product = ({ id, title, image, price, category, rating }) => {
 
     const { addToCart } = useCart()
 
@@ -10,7 +10,8 @@ const Product = ({ id, title, image, price, category }) => {
         id,
         title,
         price,
-        category
+        category,
+        rating
     }
 
 
@@ -35,6 +36,11 @@ const Product = ({ id, title, image, price, category }) => {
                     <p className="text-lg font-semibold text-green-600 mb-2">
                         ₹{price}
                     </p>
+
+                    <p className="text-lg font-semibold text-green-600 mb-2">
+                        {rating}
+                    </p>
+
 
                     <p className="text-sm text-gray-500 mb-4">
                         {category}
