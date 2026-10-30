@@ -32,12 +32,12 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="/product"
+            to="/products"
             className={({ isActive }) =>
               `transition hover: text-red-400 ${isActive ? "text-red-600 font-bold" : "text-white"}`
             }
           >
-            Product
+            Products
           </NavLink>
 
           <NavLink
