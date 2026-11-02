@@ -1,6 +1,7 @@
 
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -10,12 +11,16 @@ const Login = () => {
     formState: { errors }
   } = useForm();
 
+    const navigate = useNavigate();
+
   const formSubmit = (data) => {
     console.log(data);
     alert("Login successful!");
     reset();
+    navigate("/")
   };
 
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <form

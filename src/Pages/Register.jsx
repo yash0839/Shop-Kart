@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Navigate } from "react-router-dom";
 
 const Register = () => {
   const {
@@ -13,7 +14,13 @@ const Register = () => {
     console.log(data);
     alert("Signup successful!");
     reset();
+        Navigate("./login")
+
   };
+
+  // const formSubmit=(data)=>{
+  //   Navigate("./login")
+  // }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
