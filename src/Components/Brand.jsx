@@ -1,26 +1,7 @@
-import React from 'react'
+const Brand = ({ name }) => (
+  <div className="flex h-20 items-center justify-center rounded-xl border border-gray-200 bg-white px-3 text-center text-base font-extrabold tracking-wide text-gray-700 transition hover:border-red-500 hover:text-red-600 hover:shadow-md">
+    {name}
+  </div>
+);
 
-const Brand = ({name,image}) => {
-  return (
-    <div className='card h-100 border-0 shodow-sm rounded-3'>
-        <div className='card-body d-flex dlex-column align-items-center justify-content-center p-3'>
-            <img src={image} alt={`${name} logo`}
-            className='img-fluid md-3'
-            style={{
-                width: "100%",
-                height:"75px",
-                objectFit:"contain",
-            }} 
-             loading= "lazy"
-            />
-            <h6 className='fw-semibold text-dark md-0 text-center'>
-                {name}
-            </h6>
-
-        </div>
-      
-    </div>
-  )
-}
-
-export default Brand
+export default Brand;

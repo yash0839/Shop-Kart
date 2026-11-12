@@ -1,105 +1,83 @@
-
-import React from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { RiErrorWarningLine, RiInformationLine, RiLockPasswordLine } from "@remixicon/react";
+import PasswordInput from "../Components/PasswordInput";
+import { useAuth } from "../context/AuthContext";
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors }
-  } = useForm();
+  const { user, login } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [serverError, setServerError] = useState("");
 
-    const navigate = useNavigate();
+  const redirectTo = location.state?.from?.pathname || "/";
+  const notice = location.state?.message;
 
-  const formSubmit = (data) => {
-    console.log(data);
-    alert("Login successful!");
-    reset();
-    navigate("/")
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
+
+  const onSubmit = async (data) => {
+    setServerError("");
+    const result = await login(data);
+    if (result.ok) navigate(redirectTo, { replace: true });
+    else setServerError(result.error);
   };
 
-  
+  if (user) return <Navigate to={redirectTo} replace />;
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <form
-        onSubmit={handleSubmit(formSubmit)}
-        className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl"
-      >
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
-          Welcome Back
-        </h2>
+    <div className="flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-md rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+        <div className="mb-6 text-center">
+          <span className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white"><RiLockPasswordLine size={28} /></span>
+          <h1 className="text-2xl font-extrabold text-gray-900">Welcome Back</h1>
+          <p className="mt-1 text-sm text-gray-500">Log in to your Shop-Kart account</p>
+        </div>
 
-        <p className="text-center text-gray-500 mb-6">
-          Login to your account
+        {notice && <div className="alert alert-warning mb-4 flex items-center gap-2 py-2 text-sm"><RiInformationLine size={18} /> {notice}</div>}
+        {serverError && <div className="alert alert-danger mb-4 flex items-center gap-2 py-2 text-sm" role="alert"><RiErrorWarningLine size={18} /> {serverError}</div>}
+
+        <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
+          <div>
+            <label htmlFor="email" className="form-label text-sm font-semibold">Email</label>
+            <input
+              id="email" type="email" autoComplete="email" placeholder="you@example.com"
+              className={`form-control ${errors.email ? "is-invalid" : ""}`}
+              {...register("email", {
+                required: "Email is required",
+                pattern: { value: EMAIL_PATTERN, message: "Enter a valid email address" },
+              })}
+            />
+            {errors.email && <p className="mt-1 text-sm text-red-600" role="alert">{errors.email.message}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="password" className="form-label text-sm font-semibold">Password</label>
+            <PasswordInput
+              id="password" autoComplete="current-password" placeholder="Enter your password"
+              hasError={Boolean(errors.password)}
+              {...register("password", {
+                required: "Password is required",
+                minLength: { value: 8, message: "Password must be at least 8 characters" },
+              })}
+            />
+            {errors.password && <p className="mt-1 text-sm text-red-600" role="alert">{errors.password.message}</p>}
+          </div>
+
+          <button type="submit" disabled={isSubmitting} className="btn btn-danger w-full py-2.5 font-semibold">
+            {isSubmitting ? "Logging in..." : "Login"}
+          </button>
+        </form>
+
+        <p className="mt-6 text-center text-sm text-gray-500">
+          Don&apos;t have an account? <Link to="/register" className="font-semibold text-red-600 hover:underline">Sign up</Link>
         </p>
-
-        {/* Email */}
-        <label className="block text-gray-700 font-medium mb-2">
-          Email
-        </label>
-
-        <input
-          type="email"
-          placeholder="Enter your email"
-          {...register("email", {
-            required: "Email is mandatory",
-            pattern: {
-              value: /^[A-Za-z0-9._%+-]+@gmail\.com$/,
-              message: "Enter a valid Gmail address"
-            }
-          })}
-          className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-red-500"
-        />
-
-        {errors.email && (
-          <p className="text-red-500 text-sm mt-1">
-            {errors.email.message}
-          </p>
-        )}
-
-        {/* Password */}
-        <label className="block text-gray-700 font-medium mt-5 mb-2">
-          Password
-        </label>
-
-        <input
-          type="password"
-          placeholder="Enter your password"
-          {...register("password", {
-            required: "Password is mandatory",
-            minLength: {
-              value: 8,
-              message: "Password must be at least 8 characters"
-            }
-          })}
-          className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-red-500"
-        />
-
-        {errors.password && (
-          <p className="text-red-500 text-sm mt-1">
-            {errors.password.message}
-          </p>
-        )}
-
-        {/* Login Button */}
-        <button
-          type="submit"
-          className="w-full mt-6 bg-red-600 text-white font-semibold py-3 rounded-lg hover:bg-red-700 active:scale-95 transition duration-200"
-        >
-          Login
-        </button>
-
-       
-
-        <p className="text-center text-sm text-gray-500 mt-6">
-          Don't have an account?{" "}
-          <a href="/Register.jsx" className="text-blue-600 font-semibold hover:underline">
-            Sign Up
-          </a>
+        <p className="mt-4 rounded-lg bg-gray-50 p-3 text-xs text-gray-500">
+          <strong>Demo only:</strong> accounts are stored in this browser&apos;s localStorage. This is not production authentication - never reuse a real password here.
         </p>
-      </form>
+      </div>
     </div>
   );
 };
